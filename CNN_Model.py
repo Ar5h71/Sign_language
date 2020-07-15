@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[2]:
 
 
 import pandas as pd
@@ -52,33 +49,24 @@ classifier.add(Dense(26, activation='softmax'))
 classifier.compile(optimizer='SGD', loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-# In[4]:
 
 
 classifier.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 classifier.fit(X_train, y_train, epochs=50, batch_size=100)
 
 
-# In[5]:
 
 
 accuracy = classifier.evaluate(x=X_test,y=y_test,batch_size=32)
 print("Accuracy: ",accuracy[1])
 
 
-# In[6]:
-
-
 classifier.save('CNN.h5')
 
-
-# In[7]:
 
 
 classifier.summary()
 
-
-# In[ ]:
 
 
 
